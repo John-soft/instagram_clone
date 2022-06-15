@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/responsiveness/mobile_screen_layout.dart';
+import 'package:instagram_clone/responsiveness/responsive_layout.dart';
+import 'package:instagram_clone/responsiveness/web_screen_layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Instagram Clone',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -30,6 +34,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const ResponsiveLyout(
+        webScreenLayout: WebScreenLayout(),
+        mobileScrenLayout: MobileScreenLayout());
   }
 }
